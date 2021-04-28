@@ -1,8 +1,17 @@
+// Project: Playground Functions - Aluna: Renata Pereira Nunes
+// -------------------------------------------------------------
+
 // Desafio 1
-function compareTrue() {
-  // seu código aqui
-  //xablau
-}
+function compareTrue(parameter1, parameter2) {
+  let answer;
+  if(parameter1 && parameter2){
+    answer = true;
+  }
+  else{
+    answer = false;
+  };
+  return answer;
+};
 
 // Desafio 2
 function calcArea() {
