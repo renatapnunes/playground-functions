@@ -18,22 +18,20 @@ function calcArea(base, heigth) {
   return (base * heigth)/2;
 };
 
-console.log(calcArea(51, 1));
-
 // Desafio 3
-function splitSentence() {
-  // seu código aqui
-}
+function splitSentence(originalString) {
+  return originalString.split(" ");
+};
 
 // Desafio 4
-function concatName() {
-  // seu código aqui
-}
+function concatName(arrayString) {
+  return (arrayString[arrayString.length -1] + ", " + arrayString[0]);
+};
 
 // Desafio 5
-function footballPoints() {
-  // seu código aqui
-}
+function footballPoints(wins, ties) {
+  return (wins * 3) + (ties * 1);
+};
 
 // Desafio 6
 function highestCount() {
