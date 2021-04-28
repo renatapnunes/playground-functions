@@ -4,64 +4,89 @@
 // Desafio 1
 function compareTrue(parameter1, parameter2) {
   let answer;
-  if(parameter1 && parameter2){
+  if (parameter1 && parameter2) {
     answer = true;
-  }
-  else{
+  } else {
     answer = false;
-  };
+  }
   return answer;
-};
+}
 
 // Desafio 2
 function calcArea(base, heigth) {
-  return (base * heigth)/2;
-};
+  return (base * heigth) / 2;
+}
 
 // Desafio 3
 function splitSentence(originalString) {
-  return originalString.split(" ");
-};
+  return originalString.split(' ');
+}
 
 // Desafio 4
 function concatName(arrayString) {
-  return (arrayString[arrayString.length -1] + ", " + arrayString[0]);
-};
+  return (arrayString[arrayString.length - 1] + ', ' + arrayString[0]);
+}
 
 // Desafio 5
 function footballPoints(wins, ties) {
   return (wins * 3) + (ties * 1);
-};
+}
 
 // Desafio 6
 function highestCount(arrayNumbers) {
   let higherNumber = 0;
   let count = 0;
   // Verifica maior numero
-  for(let i = 0; i < arrayNumbers.length; i += 1){
-    if(arrayNumbers[i] > higherNumber) {
+  for (let i = 0; i < arrayNumbers.length; i += 1) {
+    if (arrayNumbers[i] > higherNumber) {
       higherNumber = arrayNumbers[i];
-    };
-  };
-  // Vezes que o maior número se repete
-  for(let i = 0; i < arrayNumbers.length; i += 1) {
-    if(higherNumber === arrayNumbers[i]) {
+    }
+  }
+  // Conta as vezes que o maior número se repete
+  for (let i = 0; i < arrayNumbers.length; i += 1) {
+    if (higherNumber === arrayNumbers[i]) {
       count += 1;
-    };
-  };
+    }
+  }
   return count;
-};
-
-console.log(highestCount([0, 0, 0]));
+}
 
 // Desafio 7
-function catAndMouse() {
-  // seu código aqui
+function catAndMouse(mouse, cat1, cat2) {
+  let distanceCat1 = Math.abs(cat1 - mouse);
+  let distanceCat2 = Math.abs(cat2 - mouse);
+  let answer = '';
+
+  if (distanceCat1 < distanceCat2) {
+    answer = 'cat1';
+  } else if (distanceCat2 < distanceCat1) {
+    answer = 'cat2';
+  } else {
+    answer = 'os gatos trombam e o rato foge';
+  }
+  return answer;
 }
 
 // Desafio 8
-function fizzBuzz() {
-  // seu código aqui
+function fizzBuzz(numbers) {
+  let arrayAnswer = [];
+  for (let i = 0; i < numbers.length; i += 1) {
+    let answer = '';
+    if ((numbers[i] % 3 === 0) || (numbers[i] % 5 === 0)) {
+      if (numbers[i] % 3 === 0) {
+        answer = 'fizz';
+        if (numbers[i] % 5 === 0) {
+          answer = 'fizzBuzz';
+        }
+      } else {
+        answer = 'buzz';
+      }
+    } else {
+      answer = 'bug!';
+    }
+    arrayAnswer.push(answer);
+  }
+  return arrayAnswer;
 }
 
 // Desafio 9
