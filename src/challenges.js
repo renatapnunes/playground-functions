@@ -90,9 +90,23 @@ function fizzBuzz(numbers) {
 }
 
 // Desafio 9
-function encode() {
-  // seu código aqui
+function encode(stringInput) {
+  let stringOutput = '';
+  let code = {
+    a: '1',
+    e: '2',
+    i: '3',
+    o: '4',
+    u: '5'
+  }
+  for (let key in code) {
+    stringOutput = stringInput.replace(key, code[key]);
+    console.log(stringOutput);
+  }
+  return stringOutput;
 }
+console.log(encode('hi there!'));
+
 function decode() {
   // seu código aqui
 }
