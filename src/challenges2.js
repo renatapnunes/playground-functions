@@ -46,7 +46,7 @@ function generatePhoneNumber(numberInput) {
         let ddd = stringNumber.slice(0,2);
         let firstNumbers = stringNumber.slice(2,-4);
         let lastNumbers = stringNumber.slice(-4);
-        let numberOutput = '(' + ddd + ')' + firstNumbers + '-' + lastNumbers;
+        let numberOutput = '(' + ddd + ') ' + firstNumbers + '-' + lastNumbers;
         return numberOutput;
       }
     }
@@ -55,12 +55,13 @@ function generatePhoneNumber(numberInput) {
 
 // Desafio 12
 function triangleCheck(lineA, lineB, lineC) {
-  if ((lineB + lineC < lineA < Math.abs(lineB - lineC)) && (lineA + lineC < lineB < Math.abs(lineA - lineC)) && (lineA + lineB < lineC < Math.abs(lineA - lineB))) {
+  if (((lineB + lineC) > lineA > Math.abs(lineB - lineC)) && ((lineA + lineC) > lineB > Math.abs(lineA - lineC)) && ((lineA + lineB) > lineC > Math.abs(lineA - lineB))) {
     return true;
   } else {
     return false;
   }
 }
+console.log(triangleCheck(10, 14, 8));
 
 // Desafio 13
 function hydrate() {
