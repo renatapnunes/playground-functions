@@ -3,13 +3,11 @@
 
 // Desafio 1
 function compareTrue(parameter1, parameter2) {
-  let answer;
   if (parameter1 && parameter2) {
-    answer = true;
+    return true;
   } else {
-    answer = false;
+    return false;
   }
-  return answer;
 }
 
 // Desafio 2
@@ -55,16 +53,13 @@ function highestCount(arrayNumbers) {
 function catAndMouse(mouse, cat1, cat2) {
   let distanceCat1 = Math.abs(cat1 - mouse);
   let distanceCat2 = Math.abs(cat2 - mouse);
-  let answer = '';
-
   if (distanceCat1 < distanceCat2) {
-    answer = 'cat1';
+    return 'cat1';
   } else if (distanceCat2 < distanceCat1) {
-    answer = 'cat2';
+    return 'cat2';
   } else {
-    answer = 'os gatos trombam e o rato foge';
+    return 'os gatos trombam e o rato foge';
   }
-  return answer;
 }
 
 // Desafio 8
@@ -100,7 +95,6 @@ function encode(encodeInput) {
     o: '4',
     u: '5'
   }
-  
   for (let i = 0; i < encodeInput.length; i += 1){
     for (let key in code) {
       if (encodeInput[i] == key) {
@@ -116,8 +110,6 @@ function encode(encodeInput) {
   return encodeOutput;
 }
 
-console.log(encode('hi there!'));
-
 function decode(decodeInput) {
   let decodeOutput = '';
   let changed = false;
@@ -128,7 +120,6 @@ function decode(decodeInput) {
     o: '4',
     u: '5'
   }
-  
   for (let i = 0; i < decodeInput.length; i += 1){
     for (let key in code) {
       if (decodeInput[i] == code[key]) {
@@ -143,8 +134,6 @@ function decode(decodeInput) {
   }
   return decodeOutput;
 }
-
-console.log(decode('h3 th2r2!'));
 
 module.exports = {
   calcArea,
