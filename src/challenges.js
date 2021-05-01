@@ -90,8 +90,9 @@ function fizzBuzz(numbers) {
 }
 
 // Desafio 9
-function encode(stringInput) {
-  let stringOutput = '';
+function encode(encodeInput) {
+  let encodeOutput = '';
+  let changed = false;
   let code = {
     a: '1',
     e: '2',
@@ -99,17 +100,51 @@ function encode(stringInput) {
     o: '4',
     u: '5'
   }
-  for (let key in code) {
-    stringOutput = stringInput.replace(key, code[key]);
-    console.log(stringOutput);
+  
+  for (let i = 0; i < encodeInput.length; i += 1){
+    for (let key in code) {
+      if (encodeInput[i] == key) {
+        encodeOutput += code[key];
+        changed = true;
+      }
+    }
+    if (!changed) {
+      encodeOutput += encodeInput[i];
+    }
+    changed = false;
   }
-  return stringOutput;
+  return encodeOutput;
 }
+
 console.log(encode('hi there!'));
 
-function decode() {
-  // seu código aqui
+function decode(decodeInput) {
+  let decodeOutput = '';
+  let changed = false;
+  let code = {
+    a: '1',
+    e: '2',
+    i: '3',
+    o: '4',
+    u: '5'
+  }
+  
+  for (let i = 0; i < decodeInput.length; i += 1){
+    for (let key in code) {
+      if (decodeInput[i] == code[key]) {
+        decodeOutput += key;
+        changed = true;
+      }
+    }
+    if (!changed) {
+      decodeOutput += decodeInput[i];
+    }
+    changed = false;
+  }
+  return decodeOutput;
 }
+
+console.log(decode('h3 th2r2!'));
 
 module.exports = {
   calcArea,
