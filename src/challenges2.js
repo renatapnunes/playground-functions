@@ -23,6 +23,7 @@ function techList(tecnologias, name) {
 
 // Desafio 11
 function generatePhoneNumber(numberInput) {
+  let checked = true;
   function countRepete(number, numberInput) {
     let count = 0;
     for(let i = 0; i < numberInput.length; i += 1) {
@@ -36,22 +37,27 @@ function generatePhoneNumber(numberInput) {
     return 'Array com tamanho incorreto.';
   } else {
     for (let i of numberInput) {
-      if (numberInput[i] < 0 || numberInput[i] > 9 || countRepete(numberInput[i], numberInput) > 3) {
-        return 'não é possível gerar um número de telefone com esses valores';
-      } else {
-        let stringNumberInput = numberInput.toString();
-        stringNumber = stringNumberInput.replace(/,/g, '');
-        // parametros do metodo slice() definidos com base em:
-        //https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String/slice
-        let ddd = stringNumber.slice(0,2);
-        let firstNumbers = stringNumber.slice(2,-4);
-        let lastNumbers = stringNumber.slice(-4);
-        let numberOutput = '(' + ddd + ') ' + firstNumbers + '-' + lastNumbers;
-        return numberOutput;
-      }
+      if (numberInput[i] < 0 || numberInput[i] > 9 || countRepete(numberInput[i], numberInput) >= 3) {
+        checked = false;
+      }      
+    }
+    if (checked) {
+      let stringNumberInput = numberInput.toString();
+      stringNumber = stringNumberInput.replace(/,/g, '');
+      // parametros do metodo slice() definidos com base em:
+      //https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String/slice
+      let ddd = stringNumber.slice(0,2);
+      let firstNumbers = stringNumber.slice(2,-4);
+      let lastNumbers = stringNumber.slice(-4);
+      let numberOutput = '(' + ddd + ') ' + firstNumbers + '-' + lastNumbers;
+      return numberOutput;
+    } else {
+      return 'não é possível gerar um número de telefone com esses valores';
     }
   }
 }
+
+console.log(generatePhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1]));
 
 // Desafio 12
 function triangleCheck(lineA, lineB, lineC) {
