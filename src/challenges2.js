@@ -69,8 +69,19 @@ function triangleCheck(lineA, lineB, lineC) {
 }
 
 // Desafio 13
-function hydrate() {
-  // seu código aqui
+function hydrate(stringInput) {
+  // parametros do metodo match definidos com base em:
+  // https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Regular_Expressions
+  let stringNumbers = stringInput.match(/\d/g);
+  let sum = 0;
+  for (let key in stringNumbers) {
+    sum += Number(stringNumbers[key]);
+  }
+  if (sum === 1) {
+    return sum + ' copo de água';
+  } else {
+    return sum + ' copos de água';
+  }
 }
 
 module.exports = {
