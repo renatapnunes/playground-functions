@@ -94,10 +94,10 @@ function encode(encodeInput) {
     i: '3',
     o: '4',
     u: '5'
-  }
-  for (let i = 0; i < encodeInput.length; i += 1){
+  };
+  for (let i = 0; i < encodeInput.length; i += 1) {
     for (let key in code) {
-      if (encodeInput[i] == key) {
+      if (encodeInput[i] === key) {
         encodeOutput += code[key];
         changed = true;
       }
@@ -119,10 +119,10 @@ function decode(decodeInput) {
     i: '3',
     o: '4',
     u: '5'
-  }
-  for (let i = 0; i < decodeInput.length; i += 1){
+  };
+  for (let i = 0; i < decodeInput.length; i += 1) {
     for (let key in code) {
-      if (decodeInput[i] == code[key]) {
+      if (decodeInput[i] === code[key]) {
         decodeOutput += key;
         changed = true;
       }
